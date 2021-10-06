@@ -34,7 +34,7 @@ class AppiumAndroidBitriseKotlin {
         capabilities?.setCapability(MobileCapabilityType.APP, System.getenv("BITRISE_APK_PATH"))
         capabilities?.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2")
         driver = AndroidDriver(url, capabilities)
-        driver?.manage()?.timeouts()?.implicitlyWait(90000, TimeUnit.MILLISECONDS)
+        driver?.manage()?.timeouts()?.implicitlyWait(5, TimeUnit.MINUTES)
     }
 
     @AfterSuite
