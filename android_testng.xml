@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="tests">
     <test name="Android">
         <classes>
-            <class name="android.AppiumAndroidLocalStorageKotlin"/>
+            <class name="android.AppiumAndroidBitriseKotlin"/>
         </classes>
     </test>
 </suite>
