@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeSuite
 import org.testng.annotations.Test
 import java.net.MalformedURLException
 import java.net.URL
+import java.util.concurrent.TimeUnit
 
 
 @Test
@@ -33,6 +34,7 @@ class AppiumAndroidBitriseKotlin {
         capabilities?.setCapability(MobileCapabilityType.APP, System.getenv("BITRISE_APK_PATH"))
         capabilities?.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2")
         driver = AndroidDriver(url, capabilities)
+        driver?.manage()?.timeouts()?.implicitlyWait(90000, TimeUnit.MILLISECONDS)
     }
 
     @AfterSuite
