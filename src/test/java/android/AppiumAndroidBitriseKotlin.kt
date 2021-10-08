@@ -33,6 +33,7 @@ class AppiumAndroidBitriseKotlin {
         capabilities?.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554")
         capabilities?.setCapability(MobileCapabilityType.APP, System.getenv("BITRISE_APK_PATH"))
         capabilities?.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2")
+        capabilities?.setCapability("androidInstallTimeout", 600000)
         driver = AndroidDriver(url, capabilities)
         driver?.manage()?.timeouts()?.implicitlyWait(90000, TimeUnit.MILLISECONDS)
     }
