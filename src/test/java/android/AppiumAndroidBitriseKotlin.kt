@@ -51,4 +51,11 @@ class AppiumAndroidBitriseKotlin {
 
         Assert.assertTrue(textView?.text == "Hello World!")
     }
+
+    @Test
+    fun sampleTest2() {
+        val textView = driver?.findElementByAccessibilityId("labelTest")
+
+        Assert.assertTrue(textView?.text == "Hello World!")
+    }
 }
